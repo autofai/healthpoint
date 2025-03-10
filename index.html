@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Health Point IND | Book Medical Tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --primary: #0057a8;
+            --accent: #e63946;
+            --discount: #2a9d8f;
+            --footer-bg: #2c3e50;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            color: #2c3e50;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(45deg, var(--primary), #0083cc);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin: 0 0 20px;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 40px 20px;
+        }
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .discount-badge {
+            background: var(--discount);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            position: absolute;
+            top: -15px;
+            right: -15px;
+        }
+        .pricing {
+            margin: 15px 0;
+        }
+        .original-price {
+            text-decoration: line-through;
+            color: #666;
+        }
+
+        /* Form Section */
+        .form-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        #bookingForm iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .whatsapp-btn img {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Modal Popups */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 2000;
+        }
+        .modal-content {
+            background: white;
+            width: 90%;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 10px;
+            position: relative;
+        }
+        .close-btn {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            #bookingForm iframe { height: 700px; }
+            .hero h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/912012345678" class="whatsapp-btn" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/220/220236.png" alt="WhatsApp">
+    </a>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">Health Point IND</div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Get Up to 60% Off on Medical Tests! 🎉</h1>
+        <p>NABL Accredited Labs | Same Day Reports | Free Home Collection</p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="services-grid">
+        <!-- Doctor Appointment -->
+        <div class="service-card">
+            <div class="discount-badge">60% OFF</div>
+            <h3>DOCTOR APPOINTMENT</h3>
+            <div class="pricing">
+                <span style="color: var(--accent); font-size: 1.4rem;">₹400</span>
+                <span class="original-price">₹1000</span>
+            </div>
+        </div>
+
+        <!-- MRI Scan -->
+        <div class="service-card">
+            <div class="discount-badge">54% OFF</div>
+            <h3>MRI SCAN</h3>
+            <div class="pricing">
+                <span style="color: var(--accent); font-size: 1.4rem;">₹2,999</span>
+                <span class="original-price">₹6,500</span>
+            </div>
+        </div>
+
+        <!-- CT Scan -->
+        <div class="service-card">
+            <div class="discount-badge">50% OFF</div>
+            <h3>CT SCAN</h3>
+            <div class="pricing">
+                <span style="color: var(--accent); font-size: 1.4rem;">₹1,999</span>
+                <span class="original-price">₹4,000</span>
+            </div>
+        </div>
+
+        <!-- PET Scan -->
+        <div class="service-card">
+            <div class="discount-badge">40% OFF</div>
+            <h3>PET SCAN</h3>
+            <div class="pricing">
+                <span style="color: var(--accent); font-size: 1.4rem;">₹14,999</span>
+                <span class="original-price">₹25,000</span>
+            </div>
+        </div>
+
+        <!-- Sonography -->
+        <div class="service-card">
+            <div class="discount-badge">40% OFF</div>
+            <h3>SONOGRAPHY / 2D ECHO</h3>
+            <div class="pricing">
+                <span style="color: var(--accent); font-size: 1.4rem;">₹719</span>
+                <span class="original-price">₹1,200</span>
+            </div>
+        </div>
+
+        <!-- X-Ray -->
+        <div class="service-card">
+            <div class="discount-badge">40% OFF</div>
+            <h3>X-RAY</h3>
+            <div class="pricing">
+                <span style="color: var(--accent); font-size: 1.4rem;">₹359</span>
+                <span class="original-price">₹600</span>
+            </div>
+        </div>
+
+        <!-- Mammography -->
+        <div class="service-card">
+            <div class="discount-badge">40% OFF</div>
+            <h3>MAMMOGRAPHY</h3>
+            <div class="pricing">
+                <span style="color: var(--accent); font-size: 1.4rem;">₹3,479</span>
+                <span class="original-price">₹5,800</span>
+            </div>
+        </div>
+
+        <!-- Health Checkups -->
+        <div class="service-card">
+            <div class="discount-badge">40% OFF</div>
+            <h3>BASIC HEALTH CHECKUP</h3>
+            <div class="pricing">
+                <span style="color: var(--accent); font-size: 1.4rem;">₹1,799</span>
+                <span class="original-price">₹3,000</span>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="discount-badge">40% OFF</div>
+            <h3>ADVANCE HEALTH CHECKUP</h3>
+            <div class="pricing">
+                <span style="color: var(--accent); font-size: 1.4rem;">₹2,399</span>
+                <span class="original-price">₹4,000</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Form -->
+    <div class="form-container" id="bookingForm">
+        <h2 style="text-align: center; color: var(--primary);">Book Now & Save!</h2>
+        <iframe src="https://tally.so/r/w7MoEz" id="tallyForm"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p style="cursor: pointer;" onclick="openModal('privacyModal')">Privacy Policy</p>
+        <p style="cursor: pointer;" onclick="openModal('termsModal')">Terms & Conditions</p>
+        <p>🔒 100% Secure Booking | NABL Accredited Labs</p>
+        <p>📍 Serving All Pune & PCMC Areas</p>
+        <p>📞 Call Us: +91 12345 67890</p>
+    </footer>
+
+    <!-- Privacy Modal -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Privacy Policy</h2>
+            <p>[Add your privacy policy text here]</p>
+        </div>
+    </div>
+
+    <!-- Terms Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Terms & Conditions</h2>
+            <p>[Add your terms & conditions here]</p>
+        </div>
+    </div>
+
+    <script>
+        // Modal Handling
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeModal() {
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.style.display = 'none';
+            });
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                closeModal();
+            }
+        }
+
+        // Mobile-responsive form height
+        function adjustForm() {
+            const form = document.getElementById('tallyForm');
+            form.style.height = window.innerWidth < 768 ? "700px" : "600px";
+        }
+        window.addEventListener('resize', adjustForm);
+        adjustForm();
+    </script>
+</body>
+</html>
